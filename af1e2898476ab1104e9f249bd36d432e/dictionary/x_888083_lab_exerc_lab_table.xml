@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="577ea81c476ab1104e9f249bd36d4349" label="Lab Table" max_length="40" name="x_888083_lab_exerc_lab_table" type="collection">
+        <element attributes="encode_utf8=false" label="Assigned to" max_length="32" name="assigned_to" reference="sys_user" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element default="javascript:current.getTableName();" label="Class" max_length="80" name="sys_class_name" type="sys_class_name"/>
+        <element default="true" label="Active" max_length="40" name="u_boolean_2" type="boolean"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" default="4 - low" label="Priority" max_length="40" name="u_choice_3" type="string">
+            <choice>
+                <element inactive_on_update="false" label="1 - Critical" sequence="0" value="1 - critical"/>
+                <element inactive_on_update="false" label="2 - High" sequence="1" value="2 - high"/>
+                <element inactive_on_update="false" label="3 - Moderate" sequence="2" value="3 - moderate"/>
+                <element inactive_on_update="false" label="4 - Low" sequence="3" value="4 - low"/>
+                <element inactive_on_update="false" label="5 - Planning" sequence="4" value="5 - planning"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="State" max_length="40" name="u_choice_4" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Requested" sequence="0" value="new"/>
+                <element inactive_on_update="false" label="Reserved" sequence="1" value="in progress"/>
+                <element inactive_on_update="false" label="Deployment Prep" sequence="2" value="on hold"/>
+                <element inactive_on_update="false" label="Ready for Pickup" sequence="3" value="resolved"/>
+                <element inactive_on_update="false" label="Checked Out" sequence="4" value="closed"/>
+                <element inactive_on_update="false" label="Post Deployment" sequence="5" value="canceled"/>
+                <element inactive_on_update="false" label="Closed Complete" sequence="6" value="closed complete"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Item type" max_length="40" name="u_choice_5" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Mobile Phone" sequence="0" value="mobile phone"/>
+                <element inactive_on_update="false" label="Laptop" sequence="1" value="Choice 2"/>
+                <element inactive_on_update="false" label="Projector" sequence="2" value="Choice 3"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Depot" max_length="40" name="u_choice_9" type="string">
+            <choice>
+                <element inactive_on_update="false" label="New York" sequence="0" value="Choice 2"/>
+                <element inactive_on_update="false" label="London" sequence="1" value="Choice 3"/>
+                <element inactive_on_update="false" label="Buenos Aires" sequence="2" value="buenos aires"/>
+                <element inactive_on_update="false" label="Santa Clara" sequence="3" value="santa clara"/>
+                <element inactive_on_update="false" label="Singapore" sequence="4" value="singapore"/>
+                <element inactive_on_update="false" label="Sydney" sequence="5" value="sydney"/>
+                <element inactive_on_update="false" label="Other" sequence="6" value="other"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="End date" mandatory="true" max_length="40" name="u_glide_date_3" type="glide_date"/>
+        <element attributes="edge_encryption_enabled=true" label="Start date" mandatory="true" max_length="40" name="u_glide_date_4" type="glide_date"/>
+        <element attributes="edge_encryption_enabled=true" label="Opened" max_length="40" name="u_glide_date_time_11" type="glide_date_time"/>
+        <element attributes="edge_encryption_enabled=true" label="Closed" max_length="40" name="u_glide_date_time_12" type="glide_date_time"/>
+        <element attributes="edge_encryption_enabled=true" label="Updated" max_length="40" name="u_glide_date_time_14" type="glide_date_time"/>
+        <element attributes="encode_utf8=false" label="Configuration item" max_length="32" name="u_reference_1" reference="cmdb_ci" type="reference"/>
+        <element attributes="encode_utf8=false" label="Closed by" max_length="32" name="u_reference_15" reference="sys_user" type="reference"/>
+        <element attributes="encode_utf8=false" default="javascript:gs.getUserID()" dynamic_default_value="2fd8e97bef3221002841f7f775c0fbc1" label="Opened by" max_length="32" name="u_reference_16" reference="sys_user" type="reference" use_dynamic_default="true"/>
+        <element attributes="encode_utf8=false" default="javascript:gs.getUserID()" dynamic_default_value="2fd8e97bef3221002841f7f775c0fbc1" label="Updated by" max_length="32" name="u_reference_17" reference="sys_user" type="reference" use_dynamic_default="true"/>
+        <element attributes="encode_utf8=false" label="Requested for" mandatory="true" max_length="32" name="u_reference_2" reference="sys_user" type="reference"/>
+        <element attributes="encode_utf8=false" label="Assignment group" max_length="32" name="u_reference_3" reference="sys_user_group" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" label="Additional comments (Customer visible)" max_length="40" name="u_string_10" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Short description" max_length="40" name="u_string_5" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Description" max_length="1000" name="u_string_6" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Work notes" max_length="3000" name="u_string_7" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Location to be used" max_length="40" name="u_string_8" type="string"/>
+        <index name="index">
+            <element name="assigned_to"/>
+        </index>
+        <index name="index2">
+            <element name="sys_class_name"/>
+        </index>
+        <index name="index3">
+            <element name="u_reference_1"/>
+        </index>
+        <index name="index4">
+            <element name="u_reference_15"/>
+        </index>
+        <index name="index5">
+            <element name="u_reference_16"/>
+        </index>
+        <index name="index6">
+            <element name="u_reference_17"/>
+        </index>
+        <index name="index7">
+            <element name="u_reference_2"/>
+        </index>
+        <index name="index8">
+            <element name="u_reference_3"/>
+        </index>
+    </element>
+</database>
